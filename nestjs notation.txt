@@ -1,0 +1,29 @@
+nest new <name> [options]
+--dry-run - без реальных изминений
+--skip-git - без git репозитория
+--skip-install - без установки завимостей
+--package-manager - npm/yarn
+--language - JS/TS
+
+nest generate <schematic><name> [options]
+--dry-run - без реальных изминений
+--project - выбор проекта для monorepo
+--flat - без создания вложеной папки
+--spec - создания файла тестов 
+--no-spec - не создавать файл тестов
+
+nest build
+Соборка проекта 
+--path - путь до tsconfig.json
+--cinfig - путь до nest-cli.json
+--watch - пересобирать после изминений
+--webpack - использовать webpack для сборки
+--webpackPath - путь до webpack
+--tsc - сборка tsc
+
+nest start 
+Сборка и запуск проекта. Опции те же, a так же:
+--preserveWatchOutput - не очищать консоль при сборке
+--watchAssets - следить не только за ts файлами
+--debug - режим debug
+--exec - путь до bin файл node
