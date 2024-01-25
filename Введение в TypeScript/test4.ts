@@ -44,6 +44,6 @@ interface C{
 
 class D implements C{
     test(){
-        
+
     }
 }
