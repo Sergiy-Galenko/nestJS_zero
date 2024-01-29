@@ -27,3 +27,12 @@ nest start
 --watchAssets - следить не только за ts файлами
 --debug - режим debug
 --exec - путь до bin файл node
+
+декораторы аргументов
+@Req() - объект запроса
+@Res() - объект ответа
+@Params(key?: string) - строковый параметр запроса
+@Body(key?: string) - тело запроса
+@Query(key?: string) - query параметры запроса
+@Headers(name?: string) - заголовок запроса
+@Session() - сессия пользователя
