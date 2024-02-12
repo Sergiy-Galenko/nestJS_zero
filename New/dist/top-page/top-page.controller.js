@@ -14,19 +14,15 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TopPageController = void 0;
 const common_1 = require("@nestjs/common");
-const schedule_1 = require("@nestjs/schedule");
 const jwt_guard_1 = require("../auth/guards/jwt.guard");
-const hh_service_1 = require("../hh/hh.service");
 const ad_validation_pipe_1 = require("../pipes/ad-validation.pipe");
 const create_top_page_dto_1 = require("./dto/create-top-page.dto");
 const find_top_page_dto_1 = require("./dto/find-top-page.dto");
 const top_page_constants_1 = require("./top-page.constants");
 const top_page_service_1 = require("./top-page.service");
 let TopPageController = class TopPageController {
-    constructor(topPageService, hhService, scheduleRegistry) {
+    constructor(topPageService) {
         this.topPageService = topPageService;
-        this.hhService = hhService;
-        this.scheduleRegistry = scheduleRegistry;
     }
     async create(dto) {
         return this.topPageService.create(dto);
@@ -61,21 +57,9 @@ let TopPageController = class TopPageController {
     async find(dto) {
         return this.topPageService.findByCategory(dto.firstCategory);
     }
-    async textSearch(text) {
-        return this.topPageService.findByText(text);
-    }
-    async test() {
-        const data = await this.topPageService.findForHhUpdate(new Date());
-        for (let page of data) {
-            const hhData = await this.hhService.getData(page.category);
-            page.hh = hhData;
-            await this.topPageService.updateById(page._id, page);
-        }
-    }
 };
 __decorate([
     common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
-    common_1.UsePipes(new common_1.ValidationPipe()),
     common_1.Post('create'),
     __param(0, common_1.Body()),
     __metadata("design:type", Function),
@@ -107,7 +91,6 @@ __decorate([
 ], TopPageController.prototype, "delete", null);
 __decorate([
     common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
-    common_1.UsePipes(new common_1.ValidationPipe()),
     common_1.Patch(':id'),
     __param(0, common_1.Param('id')), __param(1, common_1.Body()),
     __metadata("design:type", Function),
@@ -123,24 +106,9 @@ __decorate([
     __metadata("design:paramtypes", [find_top_page_dto_1.FindTopPageDto]),
     __metadata("design:returntype", Promise)
 ], TopPageController.prototype, "find", null);
-__decorate([
-    common_1.Get('textSearch/:text'),
-    __param(0, common_1.Param('text')),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [String]),
-    __metadata("design:returntype", Promise)
-], TopPageController.prototype, "textSearch", null);
-__decorate([
-    schedule_1.Cron(schedule_1.CronExpression.EVERY_DAY_AT_MIDNIGHT),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Promise)
-], TopPageController.prototype, "test", null);
 TopPageController = __decorate([
     common_1.Controller('top-page'),
-    __metadata("design:paramtypes", [top_page_service_1.TopPageService,
-        hh_service_1.HhService,
-        schedule_1.SchedulerRegistry])
+    __metadata("design:paramtypes", [top_page_service_1.TopPageService])
 ], TopPageController);
 exports.TopPageController = TopPageController;
 //# sourceMappingURL=top-page.controller.js.map

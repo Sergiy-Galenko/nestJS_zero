@@ -7,10 +7,4 @@ export declare class ReviewService {
     create(dto: CreateReviewDto): Promise<DocumentType<ReviewModel>>;
     delete(id: string): Promise<DocumentType<ReviewModel> | null>;
     findByProductId(productId: string): Promise<DocumentType<ReviewModel>[]>;
-    deleteByProductId(productId: string): Promise<{
-        ok?: number | undefined;
-        n?: number | undefined;
-    } & {
-        deletedCount?: number | undefined;
-    }>;
 }

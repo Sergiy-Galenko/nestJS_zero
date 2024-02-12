@@ -31,10 +31,6 @@ __decorate([
     class_validator_1.IsNumber(),
     __metadata("design:type", Number)
 ], HhDataDto.prototype, "seniorSalary", void 0);
-__decorate([
-    class_validator_1.IsString(),
-    __metadata("design:type", Date)
-], HhDataDto.prototype, "updatedAt", void 0);
 exports.HhDataDto = HhDataDto;
 class TopPageAdvantageDto {
 }
@@ -68,14 +64,6 @@ __decorate([
 __decorate([
     class_validator_1.IsString(),
     __metadata("design:type", String)
-], CreateTopPageDto.prototype, "metaTitle", void 0);
-__decorate([
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
-], CreateTopPageDto.prototype, "metaDescription", void 0);
-__decorate([
-    class_validator_1.IsString(),
-    __metadata("design:type", String)
 ], CreateTopPageDto.prototype, "category", void 0);
 __decorate([
     class_validator_1.IsOptional(),
@@ -85,14 +73,12 @@ __decorate([
 ], CreateTopPageDto.prototype, "hh", void 0);
 __decorate([
     class_validator_1.IsArray(),
-    class_validator_1.IsOptional(),
     class_validator_1.ValidateNested(),
     class_transformer_1.Type(() => TopPageAdvantageDto),
     __metadata("design:type", Array)
 ], CreateTopPageDto.prototype, "advantages", void 0);
 __decorate([
     class_validator_1.IsString(),
-    class_validator_1.IsOptional(),
     __metadata("design:type", String)
 ], CreateTopPageDto.prototype, "seoText", void 0);
 __decorate([

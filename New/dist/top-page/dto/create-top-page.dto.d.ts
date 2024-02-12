@@ -4,7 +4,6 @@ export declare class HhDataDto {
     juniorSalary: number;
     middleSalary: number;
     seniorSalary: number;
-    updatedAt: Date;
 }
 export declare class TopPageAdvantageDto {
     title: string;
@@ -15,12 +14,10 @@ export declare class CreateTopPageDto {
     secondCategory: string;
     alias: string;
     title: string;
-    metaTitle: string;
-    metaDescription: string;
     category: string;
     hh?: HhDataDto;
-    advantages?: TopPageAdvantageDto[];
-    seoText?: string;
+    advantages: TopPageAdvantageDto[];
+    seoText: string;
     tagsTitle: string;
     tags: string[];
 }

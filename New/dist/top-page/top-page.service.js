@@ -16,7 +16,6 @@ exports.TopPageService = void 0;
 const common_1 = require("@nestjs/common");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
 const top_page_model_1 = require("./top-page.model");
-const date_fns_1 = require("date-fns");
 let TopPageService = class TopPageService {
     constructor(topPageModel) {
         this.topPageModel = topPageModel;
@@ -30,40 +29,14 @@ let TopPageService = class TopPageService {
     async findByAlias(alias) {
         return this.topPageModel.findOne({ alias }).exec();
     }
-    async findAll() {
-        return this.topPageModel.find({}).exec();
-    }
     async findByCategory(firstCategory) {
-        return this.topPageModel
-            .aggregate()
-            .match({
-            firstCategory
-        })
-            .sort({ _id: 1 })
-            .group({
-            _id: { secondCategory: '$secondCategory' },
-            pages: { $push: { alias: '$alias', title: '$title', _id: '$_id', category: '$category' } }
-        })
-            .sort({ '_id.secondCategory': 1 })
-            .exec();
-    }
-    async findByText(text) {
-        return this.topPageModel.find({ $text: { $search: text, $caseSensitive: false } }).exec();
+        return this.topPageModel.find({ firstCategory }, { alias: 1, secondCategory: 1, title: 1 }).exec();
     }
     async deleteById(id) {
         return this.topPageModel.findByIdAndRemove(id).exec();
     }
     async updateById(id, dto) {
         return this.topPageModel.findByIdAndUpdate(id, dto, { new: true }).exec();
-    }
-    async findForHhUpdate(date) {
-        return this.topPageModel.find({
-            firstCategory: 0,
-            $or: [
-                { 'hh.updatedAt': { $lt: date_fns_1.addDays(date, -1) } },
-                { 'hh.updatedAt': { $exists: false } }
-            ]
-        }).exec();
     }
 };
 TopPageService = __decorate([
