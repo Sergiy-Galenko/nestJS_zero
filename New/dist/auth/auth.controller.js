@@ -33,26 +33,26 @@ let AuthController = class AuthController {
         return this.authService.login(email);
     }
 };
+exports.AuthController = AuthController;
 __decorate([
-    common_1.UsePipes(new common_1.ValidationPipe()),
-    common_1.Post('register'),
-    __param(0, common_1.Body()),
+    (0, common_1.UsePipes)(new common_1.ValidationPipe()),
+    (0, common_1.Post)('register'),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [auth_dto_1.AuthDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "register", null);
 __decorate([
-    common_1.UsePipes(new common_1.ValidationPipe()),
-    common_1.HttpCode(200),
-    common_1.Post('login'),
-    __param(0, common_1.Body()),
+    (0, common_1.UsePipes)(new common_1.ValidationPipe()),
+    (0, common_1.HttpCode)(200),
+    (0, common_1.Post)('login'),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [auth_dto_1.AuthDto]),
     __metadata("design:returntype", Promise)
 ], AuthController.prototype, "login", null);
-AuthController = __decorate([
-    common_1.Controller('auth'),
+exports.AuthController = AuthController = __decorate([
+    (0, common_1.Controller)('auth'),
     __metadata("design:paramtypes", [auth_service_1.AuthService])
 ], AuthController);
-exports.AuthController = AuthController;
 //# sourceMappingURL=auth.controller.js.map

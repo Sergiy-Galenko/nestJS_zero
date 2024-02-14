@@ -18,78 +18,93 @@ var TopLevelCategory;
     TopLevelCategory[TopLevelCategory["Services"] = 1] = "Services";
     TopLevelCategory[TopLevelCategory["Books"] = 2] = "Books";
     TopLevelCategory[TopLevelCategory["Products"] = 3] = "Products";
-})(TopLevelCategory = exports.TopLevelCategory || (exports.TopLevelCategory = {}));
+})(TopLevelCategory || (exports.TopLevelCategory = TopLevelCategory = {}));
 class HhData {
 }
+exports.HhData = HhData;
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", Number)
 ], HhData.prototype, "count", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", Number)
 ], HhData.prototype, "juniorSalary", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", Number)
 ], HhData.prototype, "middleSalary", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", Number)
 ], HhData.prototype, "seniorSalary", void 0);
-exports.HhData = HhData;
+__decorate([
+    (0, typegoose_1.prop)(),
+    __metadata("design:type", Date)
+], HhData.prototype, "updatedAt", void 0);
 class TopPageAdvantage {
 }
+exports.TopPageAdvantage = TopPageAdvantage;
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], TopPageAdvantage.prototype, "title", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], TopPageAdvantage.prototype, "description", void 0);
-exports.TopPageAdvantage = TopPageAdvantage;
-class TopPageModel extends defaultClasses_1.TimeStamps {
-}
+let TopPageModel = class TopPageModel extends defaultClasses_1.TimeStamps {
+};
+exports.TopPageModel = TopPageModel;
 __decorate([
-    typegoose_1.prop({ enum: TopLevelCategory }),
+    (0, typegoose_1.prop)({ enum: TopLevelCategory }),
     __metadata("design:type", Number)
 ], TopPageModel.prototype, "firstCategory", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], TopPageModel.prototype, "secondCategory", void 0);
 __decorate([
-    typegoose_1.prop({ unique: true }),
+    (0, typegoose_1.prop)({ unique: true }),
     __metadata("design:type", String)
 ], TopPageModel.prototype, "alias", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], TopPageModel.prototype, "title", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
+    __metadata("design:type", String)
+], TopPageModel.prototype, "metaTitle", void 0);
+__decorate([
+    (0, typegoose_1.prop)(),
+    __metadata("design:type", String)
+], TopPageModel.prototype, "metaDescription", void 0);
+__decorate([
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], TopPageModel.prototype, "category", void 0);
 __decorate([
-    typegoose_1.prop({ type: () => HhData }),
+    (0, typegoose_1.prop)({ type: () => HhData }),
     __metadata("design:type", HhData)
 ], TopPageModel.prototype, "hh", void 0);
 __decorate([
-    typegoose_1.prop({ type: () => [TopPageAdvantage] }),
+    (0, typegoose_1.prop)({ type: () => [TopPageAdvantage] }),
     __metadata("design:type", Array)
 ], TopPageModel.prototype, "advantages", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], TopPageModel.prototype, "seoText", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], TopPageModel.prototype, "tagsTitle", void 0);
 __decorate([
-    typegoose_1.prop({ type: () => [String] }),
+    (0, typegoose_1.prop)({ type: () => [String] }),
     __metadata("design:type", Array)
 ], TopPageModel.prototype, "tags", void 0);
-exports.TopPageModel = TopPageModel;
+exports.TopPageModel = TopPageModel = __decorate([
+    (0, typegoose_1.index)({ '$**': 'text' })
+], TopPageModel);
 //# sourceMappingURL=top-page.model.js.map

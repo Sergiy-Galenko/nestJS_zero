@@ -14,7 +14,7 @@ const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
 const passport_1 = require("@nestjs/passport");
 const passport_jwt_1 = require("passport-jwt");
-let JwtStratagy = class JwtStratagy extends passport_1.PassportStrategy(passport_jwt_1.Strategy) {
+let JwtStratagy = class JwtStratagy extends (0, passport_1.PassportStrategy)(passport_jwt_1.Strategy) {
     constructor(configService) {
         super({
             jwtFromRequest: passport_jwt_1.ExtractJwt.fromAuthHeaderAsBearerToken(),
@@ -27,9 +27,9 @@ let JwtStratagy = class JwtStratagy extends passport_1.PassportStrategy(passport
         return email;
     }
 };
-JwtStratagy = __decorate([
-    common_1.Injectable(),
+exports.JwtStratagy = JwtStratagy;
+exports.JwtStratagy = JwtStratagy = __decorate([
+    (0, common_1.Injectable)(),
     __metadata("design:paramtypes", [config_1.ConfigService])
 ], JwtStratagy);
-exports.JwtStratagy = JwtStratagy;
 //# sourceMappingURL=jwt.stratagy.js.map

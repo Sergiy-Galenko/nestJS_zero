@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CLUSTER_FIND_ERROR = exports.SALARY_CLUSTER_ID = exports.API_URL = void 0;
-const API_ROOT_API = 'https://api.hh.ru';
+const API_ROOT_API = 'https://api.hh.ua';
 exports.API_URL = {
     vacancies: API_ROOT_API + '/vacancies'
 };

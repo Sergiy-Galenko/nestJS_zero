@@ -6,10 +6,10 @@ import { ProductModel } from './product.model';
 export declare class ProductService {
     private readonly productModel;
     constructor(productModel: ModelType<ProductModel>);
-    create(dto: CreateProductDto): Promise<import("@typegoose/typegoose/lib/types").DocumentType<ProductModel>>;
-    findById(id: string): Promise<import("@typegoose/typegoose/lib/types").DocumentType<ProductModel> | null>;
-    deleteById(id: string): Promise<import("@typegoose/typegoose/lib/types").DocumentType<ProductModel> | null>;
-    updateById(id: string, dto: CreateProductDto): Promise<import("@typegoose/typegoose/lib/types").DocumentType<ProductModel> | null>;
+    create(dto: CreateProductDto): Promise<any>;
+    findById(id: string): Promise<any>;
+    deleteById(id: string): Promise<any>;
+    updateById(id: string, dto: CreateProductDto): Promise<any>;
     findWithReviews(dto: FindProductDto): Promise<(ProductModel & {
         review: ReviewModel[];
         reviewCount: number;

@@ -19,8 +19,9 @@ const passport_1 = require("@nestjs/passport");
 const jwt_stratagy_1 = require("./strategies/jwt.stratagy");
 let AuthModule = class AuthModule {
 };
-AuthModule = __decorate([
-    common_1.Module({
+exports.AuthModule = AuthModule;
+exports.AuthModule = AuthModule = __decorate([
+    (0, common_1.Module)({
         controllers: [auth_controller_1.AuthController],
         imports: [
             nestjs_typegoose_1.TypegooseModule.forFeature([
@@ -42,5 +43,4 @@ AuthModule = __decorate([
         providers: [auth_service_1.AuthService, jwt_stratagy_1.JwtStratagy]
     })
 ], AuthModule);
-exports.AuthModule = AuthModule;
 //# sourceMappingURL=auth.module.js.map

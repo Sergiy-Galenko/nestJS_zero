@@ -13,11 +13,11 @@ const top_page_module_1 = require("../top-page/top-page.module");
 const sitemap_controller_1 = require("./sitemap.controller");
 let SitemapModule = class SitemapModule {
 };
-SitemapModule = __decorate([
-    common_1.Module({
+exports.SitemapModule = SitemapModule;
+exports.SitemapModule = SitemapModule = __decorate([
+    (0, common_1.Module)({
         controllers: [sitemap_controller_1.SitemapController],
         imports: [top_page_module_1.TopPageModule, config_1.ConfigModule]
     })
 ], SitemapModule);
-exports.SitemapModule = SitemapModule;
 //# sourceMappingURL=sitemap.module.js.map

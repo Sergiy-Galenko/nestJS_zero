@@ -1,4 +1,3 @@
-/// <reference types="mongoose" />
 import { ModelType } from '@typegoose/typegoose/lib/types';
 import { AuthDto } from './dto/auth.dto';
 import { UserModel } from './user.model';
@@ -7,10 +6,10 @@ export declare class AuthService {
     private readonly userModel;
     private readonly jwtService;
     constructor(userModel: ModelType<UserModel>, jwtService: JwtService);
-    createUser(dto: AuthDto): Promise<import("mongoose").Document>;
-    findUser(email: string): Promise<import("@typegoose/typegoose/lib/types").DocumentType<UserModel> | null>;
+    createUser(dto: AuthDto): Promise<any>;
+    findUser(email: string): Promise<any>;
     validateUser(email: string, password: string): Promise<Pick<UserModel, 'email'>>;
     login(email: string): Promise<{
-        access_token: string;
+        access_token: any;
     }>;
 }

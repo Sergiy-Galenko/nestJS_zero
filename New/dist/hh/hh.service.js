@@ -8,11 +8,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HhService = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
-const top_page_model_1 = require("../top-page/top-page.model");
 const hh_constants_1 = require("./hh.constants");
 let HhService = class HhService {
     constructor(configService, httpService) {
@@ -64,10 +64,9 @@ let HhService = class HhService {
         return Number(res[0]);
     }
 };
-HhService = __decorate([
-    common_1.Injectable(),
-    __metadata("design:paramtypes", [config_1.ConfigService,
-        common_1.HttpService])
-], HhService);
 exports.HhService = HhService;
+exports.HhService = HhService = __decorate([
+    (0, common_1.Injectable)(),
+    __metadata("design:paramtypes", [config_1.ConfigService, typeof (_a = typeof common_1.HttpService !== "undefined" && common_1.HttpService) === "function" ? _a : Object])
+], HhService);
 //# sourceMappingURL=hh.service.js.map

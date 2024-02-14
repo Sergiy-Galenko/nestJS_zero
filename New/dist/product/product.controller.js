@@ -52,50 +52,51 @@ let ProductController = class ProductController {
         return this.productService.findWithReviews(dto);
     }
 };
+exports.ProductController = ProductController;
 __decorate([
-    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
-    common_1.Post('create'),
-    __param(0, common_1.Body()),
+    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
+    (0, common_1.Post)('create'),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [create_product_dto_1.CreateProductDto]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "create", null);
 __decorate([
-    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
-    common_1.Get(':id'),
-    __param(0, common_1.Param('id', ad_validation_pipe_1.IdValidationPipe)),
+    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
+    (0, common_1.Get)(':id'),
+    __param(0, (0, common_1.Param)('id', ad_validation_pipe_1.IdValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "get", null);
 __decorate([
-    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
-    common_1.Delete(':id'),
-    __param(0, common_1.Param('id', ad_validation_pipe_1.IdValidationPipe)),
+    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
+    (0, common_1.Delete)(':id'),
+    __param(0, (0, common_1.Param)('id', ad_validation_pipe_1.IdValidationPipe)),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "delete", null);
 __decorate([
-    common_1.UseGuards(jwt_guard_1.JwtAuthGuard),
-    common_1.Patch(':id'),
-    __param(0, common_1.Param('id', ad_validation_pipe_1.IdValidationPipe)), __param(1, common_1.Body()),
+    (0, common_1.UseGuards)(jwt_guard_1.JwtAuthGuard),
+    (0, common_1.Patch)(':id'),
+    __param(0, (0, common_1.Param)('id', ad_validation_pipe_1.IdValidationPipe)),
+    __param(1, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [String, product_model_1.ProductModel]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "patch", null);
 __decorate([
-    common_1.UsePipes(new common_1.ValidationPipe()),
-    common_1.HttpCode(200),
-    common_1.Post('find'),
-    __param(0, common_1.Body()),
+    (0, common_1.UsePipes)(new common_1.ValidationPipe()),
+    (0, common_1.HttpCode)(200),
+    (0, common_1.Post)('find'),
+    __param(0, (0, common_1.Body)()),
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [find_product_dto_1.FindProductDto]),
     __metadata("design:returntype", Promise)
 ], ProductController.prototype, "find", null);
-ProductController = __decorate([
-    common_1.Controller('product'),
+exports.ProductController = ProductController = __decorate([
+    (0, common_1.Controller)('product'),
     __metadata("design:paramtypes", [product_service_1.ProductService])
 ], ProductController);
-exports.ProductController = ProductController;
 //# sourceMappingURL=product.controller.js.map

@@ -11,11 +11,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TopPageService = void 0;
 const common_1 = require("@nestjs/common");
+const types_1 = require("@typegoose/typegoose/lib/types");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
 const top_page_model_1 = require("./top-page.model");
+const date_fns_1 = require("date-fns");
 let TopPageService = class TopPageService {
     constructor(topPageModel) {
         this.topPageModel = topPageModel;
@@ -29,8 +32,22 @@ let TopPageService = class TopPageService {
     async findByAlias(alias) {
         return this.topPageModel.findOne({ alias }).exec();
     }
+    async findAll() {
+        return this.topPageModel.find({}).exec();
+    }
     async findByCategory(firstCategory) {
-        return this.topPageModel.find({ firstCategory }, { alias: 1, secondCategory: 1, title: 1 }).exec();
+        return this.topPageModel
+            .aggregate()
+            .match({
+            firstCategory
+        })
+            .group({
+            _id: { secondCategory: '$secondCategory' },
+            pages: { $push: { alias: '$alias', title: '$title', _id: '$_id', category: '$category' } }
+        }).exec();
+    }
+    async findByText(text) {
+        return this.topPageModel.find({ $text: { $search: text, $caseSensitive: false } }).exec();
     }
     async deleteById(id) {
         return this.topPageModel.findByIdAndRemove(id).exec();
@@ -38,11 +55,20 @@ let TopPageService = class TopPageService {
     async updateById(id, dto) {
         return this.topPageModel.findByIdAndUpdate(id, dto, { new: true }).exec();
     }
+    async findForHhUpdate(date) {
+        return this.topPageModel.find({
+            firstCategory: 0,
+            $or: [
+                { 'hh.updatedAt': { $lt: (0, date_fns_1.addDays)(date, -1) } },
+                { 'hh.updatedAt': { $exists: false } }
+            ]
+        }).exec();
+    }
 };
-TopPageService = __decorate([
-    common_1.Injectable(),
-    __param(0, nestjs_typegoose_1.InjectModel(top_page_model_1.TopPageModel)),
-    __metadata("design:paramtypes", [Object])
-], TopPageService);
 exports.TopPageService = TopPageService;
+exports.TopPageService = TopPageService = __decorate([
+    (0, common_1.Injectable)(),
+    __param(0, (0, nestjs_typegoose_1.InjectModel)(top_page_model_1.TopPageModel)),
+    __metadata("design:paramtypes", [typeof (_a = typeof types_1.ModelType !== "undefined" && types_1.ModelType) === "function" ? _a : Object])
+], TopPageService);
 //# sourceMappingURL=top-page.service.js.map

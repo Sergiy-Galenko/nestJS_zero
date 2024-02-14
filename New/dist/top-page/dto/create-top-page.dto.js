@@ -15,80 +15,94 @@ const class_validator_1 = require("class-validator");
 const top_page_model_1 = require("../top-page.model");
 class HhDataDto {
 }
+exports.HhDataDto = HhDataDto;
 __decorate([
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], HhDataDto.prototype, "count", void 0);
 __decorate([
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], HhDataDto.prototype, "juniorSalary", void 0);
 __decorate([
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], HhDataDto.prototype, "middleSalary", void 0);
 __decorate([
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], HhDataDto.prototype, "seniorSalary", void 0);
-exports.HhDataDto = HhDataDto;
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", Date)
+], HhDataDto.prototype, "updatedAt", void 0);
 class TopPageAdvantageDto {
 }
+exports.TopPageAdvantageDto = TopPageAdvantageDto;
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], TopPageAdvantageDto.prototype, "title", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], TopPageAdvantageDto.prototype, "description", void 0);
-exports.TopPageAdvantageDto = TopPageAdvantageDto;
 class CreateTopPageDto {
 }
+exports.CreateTopPageDto = CreateTopPageDto;
 __decorate([
-    class_validator_1.IsEnum(top_page_model_1.TopLevelCategory),
+    (0, class_validator_1.IsEnum)(top_page_model_1.TopLevelCategory),
     __metadata("design:type", Number)
 ], CreateTopPageDto.prototype, "firstCategory", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateTopPageDto.prototype, "secondCategory", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateTopPageDto.prototype, "alias", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateTopPageDto.prototype, "title", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateTopPageDto.prototype, "metaTitle", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateTopPageDto.prototype, "metaDescription", void 0);
+__decorate([
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateTopPageDto.prototype, "category", void 0);
 __decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.ValidateNested(),
-    class_transformer_1.Type(() => HhDataDto),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.ValidateNested)(),
+    (0, class_transformer_1.Type)(() => HhDataDto),
     __metadata("design:type", HhDataDto)
 ], CreateTopPageDto.prototype, "hh", void 0);
 __decorate([
-    class_validator_1.IsArray(),
-    class_validator_1.ValidateNested(),
-    class_transformer_1.Type(() => TopPageAdvantageDto),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.ValidateNested)(),
+    (0, class_transformer_1.Type)(() => TopPageAdvantageDto),
     __metadata("design:type", Array)
 ], CreateTopPageDto.prototype, "advantages", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
+    (0, class_validator_1.IsOptional)(),
     __metadata("design:type", String)
 ], CreateTopPageDto.prototype, "seoText", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateTopPageDto.prototype, "tagsTitle", void 0);
 __decorate([
-    class_validator_1.IsArray(),
-    class_validator_1.IsString({ each: true }),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.IsString)({ each: true }),
     __metadata("design:type", Array)
 ], CreateTopPageDto.prototype, "tags", void 0);
-exports.CreateTopPageDto = CreateTopPageDto;
 //# sourceMappingURL=create-top-page.dto.js.map

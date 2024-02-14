@@ -14,13 +14,13 @@ const typegoose_1 = require("@typegoose/typegoose");
 const defaultClasses_1 = require("@typegoose/typegoose/lib/defaultClasses");
 class UserModel extends defaultClasses_1.TimeStamps {
 }
+exports.UserModel = UserModel;
 __decorate([
-    typegoose_1.prop({ unique: true }),
+    (0, typegoose_1.prop)({ unique: true }),
     __metadata("design:type", String)
 ], UserModel.prototype, "email", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], UserModel.prototype, "passwordHash", void 0);
-exports.UserModel = UserModel;
 //# sourceMappingURL=user.model.js.map

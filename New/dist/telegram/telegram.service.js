@@ -25,10 +25,10 @@ let TelegramService = class TelegramService {
         await this.bot.telegram.sendMessage(chatId, message);
     }
 };
-TelegramService = __decorate([
-    common_1.Injectable(),
-    __param(0, common_1.Inject(telegram_constants_1.TELEGRAM_MODULE_OPTIONS)),
+exports.TelegramService = TelegramService;
+exports.TelegramService = TelegramService = __decorate([
+    (0, common_1.Injectable)(),
+    __param(0, (0, common_1.Inject)(telegram_constants_1.TELEGRAM_MODULE_OPTIONS)),
     __metadata("design:paramtypes", [Object])
 ], TelegramService);
-exports.TelegramService = TelegramService;
 //# sourceMappingURL=telegram.service.js.map

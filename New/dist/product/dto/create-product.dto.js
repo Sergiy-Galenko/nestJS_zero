@@ -15,63 +15,74 @@ const class_validator_1 = require("class-validator");
 class ProductCharacteristicDto {
 }
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], ProductCharacteristicDto.prototype, "name", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], ProductCharacteristicDto.prototype, "value", void 0);
 class CreateProductDto {
 }
+exports.CreateProductDto = CreateProductDto;
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "image", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "title", void 0);
 __decorate([
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.IsString)(),
+    __metadata("design:type", String)
+], CreateProductDto.prototype, "link", void 0);
+__decorate([
+    (0, class_validator_1.Max)(5),
+    (0, class_validator_1.Min)(1),
+    (0, class_validator_1.IsNumber)(),
+    __metadata("design:type", Number)
+], CreateProductDto.prototype, "initialRating", void 0);
+__decorate([
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], CreateProductDto.prototype, "price", void 0);
 __decorate([
-    class_validator_1.IsOptional(),
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], CreateProductDto.prototype, "oldPrice", void 0);
 __decorate([
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], CreateProductDto.prototype, "credit", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "description", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "advantages", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsOptional)(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateProductDto.prototype, "disAdvantages", void 0);
 __decorate([
-    class_validator_1.IsArray(),
-    class_validator_1.IsString({ each: true }),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.IsString)({ each: true }),
     __metadata("design:type", Array)
 ], CreateProductDto.prototype, "categories", void 0);
 __decorate([
-    class_validator_1.IsArray(),
-    class_validator_1.IsString({ each: true }),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.IsString)({ each: true }),
     __metadata("design:type", Array)
 ], CreateProductDto.prototype, "tags", void 0);
 __decorate([
-    class_validator_1.IsArray(),
-    class_validator_1.ValidateNested(),
-    class_transformer_1.Type(() => ProductCharacteristicDto),
+    (0, class_validator_1.IsArray)(),
+    (0, class_validator_1.ValidateNested)(),
+    (0, class_transformer_1.Type)(() => ProductCharacteristicDto),
     __metadata("design:type", Array)
 ], CreateProductDto.prototype, "characteristics", void 0);
-exports.CreateProductDto = CreateProductDto;
 //# sourceMappingURL=create-product.dto.js.map

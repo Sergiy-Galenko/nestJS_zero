@@ -5,10 +5,10 @@ import { ProductService } from './product.service';
 export declare class ProductController {
     private readonly productService;
     constructor(productService: ProductService);
-    create(dto: CreateProductDto): Promise<import("@typegoose/typegoose").DocumentType<ProductModel>>;
-    get(id: string): Promise<import("@typegoose/typegoose").DocumentType<ProductModel>>;
+    create(dto: CreateProductDto): Promise<any>;
+    get(id: string): Promise<any>;
     delete(id: string): Promise<void>;
-    patch(id: string, dto: ProductModel): Promise<import("@typegoose/typegoose").DocumentType<ProductModel>>;
+    patch(id: string, dto: ProductModel): Promise<any>;
     find(dto: FindProductDto): Promise<(ProductModel & {
         review: import("../review/review.model").ReviewModel[];
         reviewCount: number;

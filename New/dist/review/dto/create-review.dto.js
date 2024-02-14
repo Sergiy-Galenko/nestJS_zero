@@ -13,27 +13,27 @@ exports.CreateReviewDto = void 0;
 const class_validator_1 = require("class-validator");
 class CreateReviewDto {
 }
+exports.CreateReviewDto = CreateReviewDto;
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateReviewDto.prototype, "name", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateReviewDto.prototype, "title", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateReviewDto.prototype, "description", void 0);
 __decorate([
-    class_validator_1.Max(5),
-    class_validator_1.Min(1, { message: 'Рейтинг не может быть менее 1' }),
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.Max)(5),
+    (0, class_validator_1.Min)(1, { message: 'Рейтинг не может быть менее 1' }),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], CreateReviewDto.prototype, "rating", void 0);
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], CreateReviewDto.prototype, "productId", void 0);
-exports.CreateReviewDto = CreateReviewDto;
 //# sourceMappingURL=create-review.dto.js.map

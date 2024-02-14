@@ -14,12 +14,12 @@ const fs_extra_1 = require("fs-extra");
 const sharp = require("sharp");
 let FilesService = class FilesService {
     async saveFiles(files) {
-        const dateFolder = date_fns_1.format(new Date(), 'yyyy-MM-dd');
+        const dateFolder = (0, date_fns_1.format)(new Date(), 'yyyy-MM-dd');
         const uploadFolder = `${app_root_path_1.path}/uploads/${dateFolder}`;
-        await fs_extra_1.ensureDir(uploadFolder);
+        await (0, fs_extra_1.ensureDir)(uploadFolder);
         const res = [];
         for (const file of files) {
-            await fs_extra_1.writeFile(`${uploadFolder}/${file.originalname}`, file.buffer);
+            await (0, fs_extra_1.writeFile)(`${uploadFolder}/${file.originalname}`, file.buffer);
             res.push({ url: `/uploads/${dateFolder}/${file.originalname}`, name: file.originalname });
         }
         return res;
@@ -30,8 +30,8 @@ let FilesService = class FilesService {
             .toBuffer();
     }
 };
-FilesService = __decorate([
-    common_1.Injectable()
-], FilesService);
 exports.FilesService = FilesService;
+exports.FilesService = FilesService = __decorate([
+    (0, common_1.Injectable)()
+], FilesService);
 //# sourceMappingURL=files.service.js.map

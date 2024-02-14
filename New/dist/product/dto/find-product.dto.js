@@ -13,13 +13,13 @@ exports.FindProductDto = void 0;
 const class_validator_1 = require("class-validator");
 class FindProductDto {
 }
+exports.FindProductDto = FindProductDto;
 __decorate([
-    class_validator_1.IsString(),
+    (0, class_validator_1.IsString)(),
     __metadata("design:type", String)
 ], FindProductDto.prototype, "category", void 0);
 __decorate([
-    class_validator_1.IsNumber(),
+    (0, class_validator_1.IsNumber)(),
     __metadata("design:type", Number)
 ], FindProductDto.prototype, "limit", void 0);
-exports.FindProductDto = FindProductDto;
 //# sourceMappingURL=find-product.dto.js.map

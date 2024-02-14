@@ -1,6 +1,6 @@
 import { HttpService } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { HhData } from 'src/top-page/top-page.model';
+import { HhData } from '../../src/top-page/top-page.model';
 export declare class HhService {
     private readonly configService;
     private readonly httpService;

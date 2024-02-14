@@ -14,9 +14,9 @@ const class_validator_1 = require("class-validator");
 const top_page_model_1 = require("../top-page.model");
 class FindTopPageDto {
 }
+exports.FindTopPageDto = FindTopPageDto;
 __decorate([
-    class_validator_1.IsEnum(top_page_model_1.TopLevelCategory),
+    (0, class_validator_1.IsEnum)(top_page_model_1.TopLevelCategory),
     __metadata("design:type", Number)
 ], FindTopPageDto.prototype, "firstCategory", void 0);
-exports.FindTopPageDto = FindTopPageDto;
 //# sourceMappingURL=find-top-page.dto.js.map

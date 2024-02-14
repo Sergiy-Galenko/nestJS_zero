@@ -15,58 +15,66 @@ const defaultClasses_1 = require("@typegoose/typegoose/lib/defaultClasses");
 class ProductCharacteristic {
 }
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], ProductCharacteristic.prototype, "name", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], ProductCharacteristic.prototype, "value", void 0);
 class ProductModel extends defaultClasses_1.TimeStamps {
 }
+exports.ProductModel = ProductModel;
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], ProductModel.prototype, "image", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], ProductModel.prototype, "title", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
+    __metadata("design:type", String)
+], ProductModel.prototype, "link", void 0);
+__decorate([
+    (0, typegoose_1.prop)(),
+    __metadata("design:type", Number)
+], ProductModel.prototype, "initialRating", void 0);
+__decorate([
+    (0, typegoose_1.prop)(),
     __metadata("design:type", Number)
 ], ProductModel.prototype, "price", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", Number)
 ], ProductModel.prototype, "oldPrice", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", Number)
 ], ProductModel.prototype, "credit", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], ProductModel.prototype, "description", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], ProductModel.prototype, "advantages", void 0);
 __decorate([
-    typegoose_1.prop(),
+    (0, typegoose_1.prop)(),
     __metadata("design:type", String)
 ], ProductModel.prototype, "disAdvantages", void 0);
 __decorate([
-    typegoose_1.prop({ type: () => [String] }),
+    (0, typegoose_1.prop)({ type: () => [String] }),
     __metadata("design:type", Array)
 ], ProductModel.prototype, "categories", void 0);
 __decorate([
-    typegoose_1.prop({ type: () => [String] }),
+    (0, typegoose_1.prop)({ type: () => [String] }),
     __metadata("design:type", Array)
 ], ProductModel.prototype, "tags", void 0);
 __decorate([
-    typegoose_1.prop({ type: () => [ProductCharacteristic], _id: false }),
+    (0, typegoose_1.prop)({ type: () => [ProductCharacteristic], _id: false }),
     __metadata("design:type", Array)
 ], ProductModel.prototype, "characteristics", void 0);
-exports.ProductModel = ProductModel;
 //# sourceMappingURL=product.model.js.map

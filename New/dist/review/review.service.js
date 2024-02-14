@@ -11,9 +11,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReviewService = void 0;
 const common_1 = require("@nestjs/common");
+const types_1 = require("@typegoose/typegoose/lib/types");
 const mongoose_1 = require("mongoose");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
 const review_model_1 = require("./review.model");
@@ -30,11 +32,14 @@ let ReviewService = class ReviewService {
     async findByProductId(productId) {
         return this.reviewModel.find({ productId: mongoose_1.Types.ObjectId(productId) }).exec();
     }
+    async deleteByProductId(productId) {
+        return this.reviewModel.deleteMany({ productId: mongoose_1.Types.ObjectId(productId) }).exec();
+    }
 };
-ReviewService = __decorate([
-    common_1.Injectable(),
-    __param(0, nestjs_typegoose_1.InjectModel(review_model_1.ReviewModel)),
-    __metadata("design:paramtypes", [Object])
-], ReviewService);
 exports.ReviewService = ReviewService;
+exports.ReviewService = ReviewService = __decorate([
+    (0, common_1.Injectable)(),
+    __param(0, (0, nestjs_typegoose_1.InjectModel)(review_model_1.ReviewModel)),
+    __metadata("design:paramtypes", [typeof (_a = typeof types_1.ModelType !== "undefined" && types_1.ModelType) === "function" ? _a : Object])
+], ReviewService);
 //# sourceMappingURL=review.service.js.map

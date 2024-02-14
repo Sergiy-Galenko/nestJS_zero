@@ -14,8 +14,9 @@ const serve_static_1 = require("@nestjs/serve-static");
 const app_root_path_1 = require("app-root-path");
 let FilesModule = class FilesModule {
 };
-FilesModule = __decorate([
-    common_1.Module({
+exports.FilesModule = FilesModule;
+exports.FilesModule = FilesModule = __decorate([
+    (0, common_1.Module)({
         imports: [serve_static_1.ServeStaticModule.forRoot({
                 rootPath: `${app_root_path_1.path}/uploads`,
                 serveRoot: '/uploads'
@@ -24,5 +25,4 @@ FilesModule = __decorate([
         providers: [files_service_1.FilesService]
     })
 ], FilesModule);
-exports.FilesModule = FilesModule;
 //# sourceMappingURL=files.module.js.map

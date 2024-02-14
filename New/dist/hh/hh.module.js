@@ -12,12 +12,12 @@ const config_1 = require("@nestjs/config");
 const hh_service_1 = require("./hh.service");
 let HhModule = class HhModule {
 };
-HhModule = __decorate([
-    common_1.Module({
+exports.HhModule = HhModule;
+exports.HhModule = HhModule = __decorate([
+    (0, common_1.Module)({
         providers: [hh_service_1.HhService],
-        imports: [config_1.ConfigModule, common_1.HttpModule],
+        imports: [config_1.ConfigModule, common_1.HttpCode],
         exports: [hh_service_1.HhService]
     })
 ], HhModule);
-exports.HhModule = HhModule;
 //# sourceMappingURL=hh.module.js.map

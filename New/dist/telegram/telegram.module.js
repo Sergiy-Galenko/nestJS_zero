@@ -32,9 +32,9 @@ let TelegramModule = TelegramModule_1 = class TelegramModule {
         };
     }
 };
-TelegramModule = TelegramModule_1 = __decorate([
-    common_1.Global(),
-    common_1.Module({})
-], TelegramModule);
 exports.TelegramModule = TelegramModule;
+exports.TelegramModule = TelegramModule = TelegramModule_1 = __decorate([
+    (0, common_1.Global)(),
+    (0, common_1.Module)({})
+], TelegramModule);
 //# sourceMappingURL=telegram.module.js.map

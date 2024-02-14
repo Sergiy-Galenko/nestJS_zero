@@ -8,9 +8,6 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SitemapController = void 0;
 const common_1 = require("@nestjs/common");
@@ -21,19 +18,21 @@ const xml2js_1 = require("xml2js");
 const sitemap_constants_1 = require("./sitemap.constants");
 let SitemapController = class SitemapController {
     constructor(topPageService, configService) {
+        var _a;
         this.topPageService = topPageService;
         this.configService = configService;
+        this.domain = (_a = this.configService.get('DOMAIN')) !== null && _a !== void 0 ? _a : '';
     }
-    async sitemap(host) {
+    async sitemap() {
         const formatString = 'yyyy-MM-dd\'T\'HH:mm:00.000xxx';
         let res = [{
-                loc: 'https://' + host,
-                lastmod: date_fns_1.format(date_fns_1.subDays(new Date(), 1), formatString),
+                loc: this.domain,
+                lastmod: (0, date_fns_1.format)((0, date_fns_1.subDays)(new Date(), 1), formatString),
                 changefreq: 'daily',
                 priority: '1.0'
             }, {
-                loc: `https://${host}/courses`,
-                lastmod: date_fns_1.format(date_fns_1.subDays(new Date(), 1), formatString),
+                loc: `${this.domain}/courses`,
+                lastmod: (0, date_fns_1.format)((0, date_fns_1.subDays)(new Date(), 1), formatString),
                 changefreq: 'daily',
                 priority: '1.0'
             }];
@@ -41,8 +40,8 @@ let SitemapController = class SitemapController {
         res = res.concat(pages.map(page => {
             var _a;
             return {
-                loc: `https://${host}${sitemap_constants_1.CATEGORY_URL[page.firstCategory]}/${page.alias}`,
-                lastmod: date_fns_1.format(new Date((_a = page.updatedAt) !== null && _a !== void 0 ? _a : new Date()), formatString),
+                loc: `${this.domain}${sitemap_constants_1.CATEGORY_URL[page.firstCategory]}/${page.alias}`,
+                lastmod: (0, date_fns_1.format)(new Date((_a = page.updatedAt) !== null && _a !== void 0 ? _a : new Date()), formatString),
                 changefreq: 'weekly',
                 priority: '0.7'
             };
@@ -60,18 +59,17 @@ let SitemapController = class SitemapController {
         });
     }
 };
+exports.SitemapController = SitemapController;
 __decorate([
-    common_1.Get('xml'),
-    common_1.Header('content-type', 'text/xml'),
-    __param(0, common_1.Headers('host')),
+    (0, common_1.Get)('xml'),
+    (0, common_1.Header)('content-type', 'text/xml'),
     __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
+    __metadata("design:paramtypes", []),
     __metadata("design:returntype", Promise)
 ], SitemapController.prototype, "sitemap", null);
-SitemapController = __decorate([
-    common_1.Controller('sitemap'),
+exports.SitemapController = SitemapController = __decorate([
+    (0, common_1.Controller)('sitemap'),
     __metadata("design:paramtypes", [top_page_service_1.TopPageService,
         config_1.ConfigService])
 ], SitemapController);
-exports.SitemapController = SitemapController;
 //# sourceMappingURL=sitemap.controller.js.map

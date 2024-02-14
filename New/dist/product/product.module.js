@@ -14,8 +14,9 @@ const product_model_1 = require("./product.model");
 const product_service_1 = require("./product.service");
 let ProductModule = class ProductModule {
 };
-ProductModule = __decorate([
-    common_1.Module({
+exports.ProductModule = ProductModule;
+exports.ProductModule = ProductModule = __decorate([
+    (0, common_1.Module)({
         controllers: [product_controller_1.ProductController],
         imports: [
             nestjs_typegoose_1.TypegooseModule.forFeature([
@@ -30,5 +31,4 @@ ProductModule = __decorate([
         providers: [product_service_1.ProductService]
     })
 ], ProductModule);
-exports.ProductModule = ProductModule;
 //# sourceMappingURL=product.module.js.map
