@@ -14,6 +14,6 @@ jobs:
         with:
           registry: docker.pkg.github.com
           name: https://github.com/Sergiy-Galenko/nestJS_zero.git
-          username: ${{ secrets.Sergiy_Halenko }}
-          password: ${{ secrets.Qazxsw2004 }}
+          username: ${{ secrets.SSergiyHalenko }}
+          password: ${{ secrets.g0Ghh-77y9rrrss1l4 }}
           tags: "develop"
