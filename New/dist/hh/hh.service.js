@@ -67,6 +67,6 @@ let HhService = class HhService {
 exports.HhService = HhService;
 exports.HhService = HhService = __decorate([
     (0, common_1.Injectable)(),
-    __metadata("design:paramtypes", [config_1.ConfigService, typeof (_a = typeof common_1.HttpService !== "undefined" && common_1.HttpService) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [config_1.ConfigService, typeof (_a = typeof HttpService !== "undefined" && HttpService) === "function" ? _a : Object])
 ], HhService);
 //# sourceMappingURL=hh.service.js.map

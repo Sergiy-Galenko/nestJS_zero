@@ -5,8 +5,8 @@ export declare class ReviewController {
     private readonly reviewService;
     private readonly telegramService;
     constructor(reviewService: ReviewService, telegramService: TelegramService);
-    create(dto: CreateReviewDto): Promise<DocumentType<import("./review.model").ReviewModel>>;
+    create(dto: CreateReviewDto): Promise<import("@typegoose/typegoose").DocumentType<import("./review.model").ReviewModel>>;
     notify(dto: CreateReviewDto): Promise<void>;
     delete(id: string): Promise<void>;
-    getByProduct(productId: string): Promise<DocumentType<import("./review.model").ReviewModel>[]>;
+    getByProduct(productId: string): Promise<import("@typegoose/typegoose").DocumentType<import("./review.model").ReviewModel>[]>;
 }

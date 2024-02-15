@@ -11,11 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ProductService = void 0;
 const common_1 = require("@nestjs/common");
-const types_1 = require("@typegoose/typegoose/lib/types");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
 const product_model_1 = require("./product.model");
 let ProductService = class ProductService {
@@ -80,6 +78,6 @@ exports.ProductService = ProductService;
 exports.ProductService = ProductService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, nestjs_typegoose_1.InjectModel)(product_model_1.ProductModel)),
-    __metadata("design:paramtypes", [typeof (_a = typeof types_1.ModelType !== "undefined" && types_1.ModelType) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [Object])
 ], ProductService);
 //# sourceMappingURL=product.service.js.map

@@ -3,8 +3,7 @@ import { INestApplication } from '@nestjs/common';
 import * as request from 'supertest';
 import { AppModule } from './../src/app.module';
 import { disconnect } from 'mongoose';
-import { AuthDto } from '../src/auth/dto/auth.dto';
-import { beforeEach, describe, it } from 'node:test';
+import { AuthDto } from 'src/auth/dto/auth.dto';
 
 const loginDto: AuthDto = {
 	login: 'a@a.ru',

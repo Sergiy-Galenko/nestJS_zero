@@ -29,13 +29,29 @@ import { Types } from 'mongoose';
 export declare class TopPageService {
     private readonly topPageModel;
     constructor(topPageModel: ModelType<TopPageModel>);
-    create(dto: CreateTopPageDto): Promise<any>;
-    findById(id: string): Promise<any>;
-    findByAlias(alias: string): Promise<any>;
-    findAll(): Promise<any>;
-    findByCategory(firstCategory: TopLevelCategory): Promise<any>;
-    findByText(text: string): Promise<any>;
-    deleteById(id: string): Promise<any>;
-    updateById(id: string | Types.ObjectId, dto: CreateTopPageDto): Promise<any>;
-    findForHhUpdate(date: Date): Promise<any>;
+    create(dto: CreateTopPageDto): Promise<import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("@typegoose/typegoose/lib/types").DocumentType<TopPageModel>> & Omit<import("mongoose").Document<any, any, any>, "_id"> & TopPageModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
+        _id: Types.ObjectId;
+    }>>;
+    findById(id: string): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("@typegoose/typegoose/lib/types").DocumentType<TopPageModel>> & Omit<import("mongoose").Document<any, any, any>, "_id"> & TopPageModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
+        _id: Types.ObjectId;
+    }>) | null>;
+    findByAlias(alias: string): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("@typegoose/typegoose/lib/types").DocumentType<TopPageModel>> & Omit<import("mongoose").Document<any, any, any>, "_id"> & TopPageModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
+        _id: Types.ObjectId;
+    }>) | null>;
+    findAll(): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("@typegoose/typegoose/lib/types").DocumentType<TopPageModel>> & Omit<import("mongoose").Document<any, any, any>, "_id"> & TopPageModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
+        _id: Types.ObjectId;
+    }>)[]>;
+    findByCategory(firstCategory: TopLevelCategory): Promise<any[]>;
+    findByText(text: string): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("@typegoose/typegoose/lib/types").DocumentType<TopPageModel>> & Omit<import("mongoose").Document<any, any, any>, "_id"> & TopPageModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
+        _id: Types.ObjectId;
+    }>)[]>;
+    deleteById(id: string): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("@typegoose/typegoose/lib/types").DocumentType<TopPageModel>> & Omit<import("mongoose").Document<any, any, any>, "_id"> & TopPageModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
+        _id: Types.ObjectId;
+    }>) | null>;
+    updateById(id: string | Types.ObjectId, dto: CreateTopPageDto): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("@typegoose/typegoose/lib/types").DocumentType<TopPageModel>> & Omit<import("mongoose").Document<any, any, any>, "_id"> & TopPageModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
+        _id: Types.ObjectId;
+    }>) | null>;
+    findForHhUpdate(date: Date): Promise<(import("mongoose").Document<unknown, import("@typegoose/typegoose/lib/types").BeAnObject, import("@typegoose/typegoose/lib/types").DocumentType<TopPageModel>> & Omit<import("mongoose").Document<any, any, any>, "_id"> & TopPageModel & import("@typegoose/typegoose/lib/types").IObjectWithTypegooseFunction & Required<{
+        _id: Types.ObjectId;
+    }>)[]>;
 }

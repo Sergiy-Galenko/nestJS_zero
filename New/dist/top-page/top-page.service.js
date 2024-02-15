@@ -11,11 +11,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TopPageService = void 0;
 const common_1 = require("@nestjs/common");
-const types_1 = require("@typegoose/typegoose/lib/types");
 const nestjs_typegoose_1 = require("nestjs-typegoose");
 const top_page_model_1 = require("./top-page.model");
 const date_fns_1 = require("date-fns");
@@ -69,6 +67,6 @@ exports.TopPageService = TopPageService;
 exports.TopPageService = TopPageService = __decorate([
     (0, common_1.Injectable)(),
     __param(0, (0, nestjs_typegoose_1.InjectModel)(top_page_model_1.TopPageModel)),
-    __metadata("design:paramtypes", [typeof (_a = typeof types_1.ModelType !== "undefined" && types_1.ModelType) === "function" ? _a : Object])
+    __metadata("design:paramtypes", [Object])
 ], TopPageService);
 //# sourceMappingURL=top-page.service.js.map
